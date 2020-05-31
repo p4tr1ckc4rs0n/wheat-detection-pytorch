@@ -24,7 +24,7 @@ class WheatDataset(Dataset):
         image_bbox = self._bbox_df[self._bbox_df['image_id'] == image_id]
         num_boxes = len(image_bbox)
         # get bounding box coordinates
-        img_bboxes = image_bbox[['x', 'y', 'w', 'h']].values
+        img_bboxes = image_bbox[['x', 'y', 'x1', 'y1']].values
         # convert everything into a torch.Tensor
         boxes = torch.as_tensor(img_bboxes, dtype=torch.float32)
         areas = image_bbox['area'].values

@@ -12,7 +12,7 @@ from transforms import get_train_transform, get_valid_transform
 
 def get_model_instance_segmentation(num_classes):
     # load a model pre-trained pre-trained on COCO
-    model = torchvision.models.detection.maskrcnn_resnet50_fpn(pretrained=True)
+    model = torchvision.models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
 
     # get number of input features for the classifier
     in_features = model.roi_heads.box_predictor.cls_score.in_features
