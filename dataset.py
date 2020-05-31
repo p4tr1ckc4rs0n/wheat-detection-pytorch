@@ -38,7 +38,6 @@ class WheatDataset(Dataset):
         target["labels"] = labels
         target["area"] = areas
         target["image_id"] = torch.tensor([idx])
-        target["area"] = areas
         target["iscrowd"] = iscrowd
 
         if self._transforms:
@@ -50,7 +49,7 @@ class WheatDataset(Dataset):
             sample = self._transforms(**sample)
             image = sample['image']
 
-            target['boxes'] = torch.stack(tuple(map(torch.tensor, zip(*sample['bboxes'])))).permute(1, 0)
+            target['boxes'] = torch.tensor(sample['bboxes'])
             return image, target, image_id
 
     def __len__(self):
