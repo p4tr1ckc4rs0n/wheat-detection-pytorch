@@ -1,0 +1,13 @@
+*.pyc
+*.ipynb
+*.egg-info/
+.cache/
+.idea/
+.logs/
+.DS_Store
+tmp/
+data/
+.coverage*
+scratch.*
+*.iml
+TODO

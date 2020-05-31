@@ -1,0 +1,29 @@
+albumentations==0.4.5
+certifi==2020.4.5.1
+cycler==0.10.0
+decorator==4.4.2
+imageio==2.8.0
+imgaug==0.2.6
+joblib==0.15.1
+kiwisolver==1.2.0
+matplotlib==3.2.1
+networkx==2.4
+numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1588605093053/work
+olefile==0.46
+opencv-python==4.2.0.34
+pandas==1.0.4
+Pillow==7.1.2
+pyparsing==2.4.7
+python-dateutil==2.8.1
+pytz==2020.1
+PyWavelets==1.1.1
+PyYAML==5.3.1
+scikit-image==0.17.2
+scikit-learn==0.23.1
+scipy==1.4.1
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1590081179328/work
+sklearn==0.0
+threadpoolctl==2.1.0
+tifffile==2020.5.30
+torch==1.4.0
+torchvision==0.5.0
