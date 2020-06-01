@@ -27,7 +27,7 @@ class WheatDataset(Dataset):
         img_bboxes = image_bbox[['x', 'y', 'x1', 'y1']].values
         # convert everything into a torch.Tensor
         boxes = torch.as_tensor(img_bboxes, dtype=torch.float32)
-        areas = image_bbox['area'].values
+        areas = torch.as_tensor(image_bbox['area'].values, dtype=torch.float32)
         # there is only one class
         labels = torch.ones((num_boxes,), dtype=torch.int64)
         # suppose all instances are not crowd
@@ -48,8 +48,7 @@ class WheatDataset(Dataset):
             }
             sample = self._transforms(**sample)
             image = sample['image']
-
-            target['boxes'] = torch.tensor(sample['bboxes'])
+            target['boxes'] = torch.as_tensor(sample['bboxes'], dtype=torch.float32)
             return image, target, image_id
 
     def __len__(self):
